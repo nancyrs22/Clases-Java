@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
+
 public class Test {
 
     public static void main(String[] args) {
@@ -105,8 +108,18 @@ public class Test {
         System.out.println(helloApp.hola("Valeria"));
         System.out.println(helloApp.hola("Valeria", "Romero"));
     
+        HashMap<String, String> usuarios = new HashMap<String,String>();
 
+        usuarios.put("nombre","Nancy");
+        usuarios.put("apellido","Rojas");
+        usuarios.put("email","nancy@hotmail.com");
 
+        Set<String> keys = usuarios.keySet();
+
+        for(String key:keys)
+        {
+            System.out.println(key+":"+usuarios.get(key));
+        }
         
 
     }
