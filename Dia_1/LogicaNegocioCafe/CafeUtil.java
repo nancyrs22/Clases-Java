@@ -33,17 +33,15 @@ class CafeUtil
 
     public static void addCustomer(ArrayList<String> customers)
     {
-        ArrayList<String> myArray = new ArrayList<String>();
+        // ArrayList<String> myArray = new ArrayList<String>();
         System.out.println("Por favor, ingresa tu nombre:");
         String userName = System.console().readLine();
         System.out.println("Hola " + userName);
-        System.out.println("Hay " + myArray.size()+" personas frente a ti.");
-        for(int i = 0; i<myArray.size();i++)
-        {
+        System.out.println("Hay " + customers.size()+" personas frente a ti.");
 
-            myArray.add(userName);
-        }
-        System.out.println(myArray);
-        System.out.println(customers);
+        customers.add(userName);
+
+        // System.out.println(customers);
+        System.out.println(customers.toString());
     }
 }
