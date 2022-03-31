@@ -15,6 +15,18 @@ public class Aplicacion {
 		kingkon.comerBananas();
 
 		kingkon.escalar();
+		
+		Murcielago batman = new Murcielago();
+		
+		batman.atacarPueblo();
+		batman.atacarPueblo();
+		batman.atacarPueblo();
+		
+		batman.comerHumano();
+		batman.comerHumano();
+
+		batman.volar();
+		batman.volar();
 	}
 
 }
