@@ -22,6 +22,18 @@ public class Physician extends Usuario implements UsuarioCompatibleConHIPAA{
         report += String.format("Notas: %s \n", notes);
         this.patientNotes.add(report);
     }
+
+	@Override
+	public boolean assignPin(int pin) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean accessAuthorized(Integer confirmedAuthID) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
     // PARA HACER: Setters y Getters
 

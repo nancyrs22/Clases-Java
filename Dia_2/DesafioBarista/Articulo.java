@@ -3,9 +3,10 @@ class Articulo
     private String nombre;
     private Double precio;
 
-    public Articulo()
+    public Articulo(String nombre, Double precio)
     {
-        
+        this.nombre = nombre;
+        this.precio = precio;
     }
 
     public String getNombre()
@@ -24,5 +25,10 @@ class Articulo
     public void setPrecio(Double precio)
     {
         this.precio = precio;
+    }
+
+    public void prueba()
+    {
+        System.out.println(nombre+": "+precio);
     }
 }

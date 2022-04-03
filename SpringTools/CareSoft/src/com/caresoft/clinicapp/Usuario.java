@@ -25,7 +25,7 @@ public class Usuario {
     {
     	return pin;
     }
-    public void setPin()
+    public void setPin(int pin)
     {
     	this.pin = pin;
     }

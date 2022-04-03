@@ -3,16 +3,16 @@ import java.util.ArrayList;
 class Pedido
 {
     private String nombre;
-    // private double total;
     private boolean listo;
     
-    private ArrayList<Articulo> articulos = new ArrayList<Articulo>();
+    private ArrayList<String> articulos = new ArrayList<String>();
+    private static double precio_total = 0;
 
     public Pedido()
     {
-        this.nombre = "Invitado";
-        articulos = new ArrayList[];
-    }
+        String nombre = "Invitado";
+        ArrayList<String> articulos = new ArrayList<String>();
+    } 
 
     public Pedido(String nombre)
     {
@@ -28,21 +28,12 @@ class Pedido
         this.nombre = nombre;
     }
 
-    // public double getTotal()
-    // {
-    //     return total;
-    // }
-    // public void setTotal(double total)
-    // {
-    //     this.total = total;
-    // }
-
-    public boolean getListo()
+    public Boolean getListo()
     {
         return listo;
     }
     public void setListo(boolean listo)
-    { 
+    {
         this.listo = listo;
     }
 
@@ -55,18 +46,24 @@ class Pedido
     {
         if(listo)
         {
-            System.out.println("Tu pedido esta listo");
+            System.out.println("Tu pedido está listo.");
         }
         else
         {
-            System.out.println("Gracias por esperar. Tu pedido estará listo pronto");
+            System.out.println("Gracias por esperar.Tu pedido estará listo pronto.");
         }
     }
 
     public void display()
     {
-        System.out.println("Nombre Cliente: " + pedido.nombre);
-        System.out.println(articulo.nombre+" : "+articulo.precio);
-        System.out.println("Nombre Cliente: " + articulo.nombre);
-    }   
+        System.out.println("Nombre del cliente: "+nombre);
+        System.out.println(Articulo.nombre+": "+Articulo.precio);
+        System.out.println("Total: "+precio_total);
+        
+    }
+
+    public double getOrderTotal()
+    {
+        return precio_total += Articulo.getPrecio();
+    }
 }
