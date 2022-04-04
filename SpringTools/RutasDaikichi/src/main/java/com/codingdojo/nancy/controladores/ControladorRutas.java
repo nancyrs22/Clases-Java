@@ -25,4 +25,6 @@ public class ControladorRutas {
 	{
 		return "Tomorrow, an opportunity will arise, so be sure to be open to new ideas!";
 	}
+	
+	
 }
