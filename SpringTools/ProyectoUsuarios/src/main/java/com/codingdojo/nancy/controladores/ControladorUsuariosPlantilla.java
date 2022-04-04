@@ -59,14 +59,14 @@ public class ControladorUsuariosPlantilla {
 		
 		if(nombre.equals(""))
 		{
-			flash.addFlashAttribute("error_registro","Por favor proporciona tu nombre");
+			mensajes.add("Por favor proporciona tu nombre.");
 			isValid = false;
 			//return "redirect:/registro";
 		}
 		
 		if(email.equals(""))
 		{
-			flash.addFlashAttribute("error_registro","Por favor proporciona tu email");
+			mensajes.add("Por favor proporciona tu email.");
 			isValid = false;
 			//return "redirect:/registro";
 		}

@@ -19,7 +19,7 @@
 	
 	<div>
 		<c:forEach var="mensaje" items="${ error_registro}">
-			<p><c:out value = "${mensajes}"/></p>
+			<p><c:out value = "${mensaje}"/></p>
 		</c:forEach>
 	</div>
 </body>
