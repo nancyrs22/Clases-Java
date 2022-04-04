@@ -2,6 +2,7 @@ public class Calculadora {
     private double operando1;
     private double operando2;
     private String operacion; 
+    private double resultado;
 
     public Calculadora()
     {
@@ -12,48 +13,37 @@ public class Calculadora {
     {
         this.operando1 = operando1;
     }
-    public double getOperandoUno()
-    {
-        return operando1;
-    }
+
 
     public void setOperandoDos(double operando2)
     {
         this.operando2 = operando2;
     }
-    public double getOperandoDos()
-    {
-        return operando2;
-    }
+
     
     public void setOperacion(String operacion)
     {
         this.operacion = operacion;
     }
-    public String getOperacion()
+
+
+
+    public void realizarOperacion()
     {
-        return operacion;
-    }
-
-
-
-    public double realizarOperacion()
-    {
-        double resultado=0;
-        if(getOperacion()=="+")
+        
+        if(operacion=="+")
         {
             //System.out.println("Se puede sumar");
-            resultado = getOperandoUno()+getOperandoDos();
+            resultado = operando1 + operando2;
         }
-        else if(getOperacion()== "-")
+        else if(operacion == "-")
         {
-            resultado = getOperandoUno()-getOperandoDos();
+            resultado = operando1 - operando2;
         }
-        return resultado;
     }
 
     public void getResultados()
     {
-        System.out.println(realizarOperacion());
+        System.out.println(resultado);
     }
 }
