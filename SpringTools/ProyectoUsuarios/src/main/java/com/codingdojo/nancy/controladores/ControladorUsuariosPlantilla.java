@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.codingdojo.nancy.modelos.Usuario;
 
@@ -46,12 +47,37 @@ public class ControladorUsuariosPlantilla {
 	}
 	
 	@RequestMapping(value="/registroUsuario",method=RequestMethod.POST)
-	public String registraUsuario(@RequestParam(value="nombre") String nombre, @RequestParam(value="email") String email,HttpSession session /*Se agrega para iniciar sesion*/)
+	public String registraUsuario(@RequestParam(value="nombre") String nombre, @RequestParam(value="email") String email,HttpSession session /*Se agrega para iniciar sesion*/,
+									RedirectAttributes flash/*se agregan mensaje flash para validar*/)
 	{
 		System.out.println(nombre);
 		System.out.println(email);
 		
-		session .setAttribute("nombre", nombre);/*el nombre de la variable, la variable*/
+		ArrayList<String> mensajes = new ArrayList<String>();
+		
+		boolean isValid = true;
+		
+		if(nombre.equals(""))
+		{
+			flash.addFlashAttribute("error_registro","Por favor proporciona tu nombre");
+			isValid = false;
+			//return "redirect:/registro";
+		}
+		
+		if(email.equals(""))
+		{
+			flash.addFlashAttribute("error_registro","Por favor proporciona tu email");
+			isValid = false;
+			//return "redirect:/registro";
+		}
+		
+		if(!isValid)
+		{
+			flash.addFlashAttribute("error_registro",mensajes);
+			return "redirect:/registro";
+		}
+		
+		session .setAttribute("nombre_session", nombre);/*el nombre de la variable, la variable*/
 		
 		return "redirect:/dashboard";
 	}

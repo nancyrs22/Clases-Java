@@ -9,6 +9,6 @@
 <title>Dashboard</title>
 </head>
 <body>
-	<h1>Bienvenido al Dashboard <c:out value="${nombre}" /> </h1>
+	<h1>Bienvenido al Dashboard <c:out value="${nombre_session}" /> </h1>
 </body>
 </html>
