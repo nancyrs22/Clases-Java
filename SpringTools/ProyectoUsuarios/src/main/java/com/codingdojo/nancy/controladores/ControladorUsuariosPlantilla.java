@@ -47,8 +47,10 @@ public class ControladorUsuariosPlantilla {
 	}
 	
 	@RequestMapping(value="/registroUsuario",method=RequestMethod.POST)
-	public String registraUsuario(@RequestParam(value="nombre") String nombre, @RequestParam(value="email") String email,HttpSession session /*Se agrega para iniciar sesion*/,
-									RedirectAttributes flash/*se agregan mensaje flash para validar*/)
+	public String registraUsuario(@RequestParam(value="nombre") String nombre, 
+								  @RequestParam(value="email") String email,
+								  HttpSession session /*Se agrega para iniciar sesion*/,
+							      RedirectAttributes flash/*se agregan mensaje flash para validar*/)
 	{
 		System.out.println(nombre);
 		System.out.println(email);
