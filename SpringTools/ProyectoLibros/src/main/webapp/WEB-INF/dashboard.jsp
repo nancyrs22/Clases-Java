@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,35 +10,33 @@
 
 </head>
 <body>
-	<h1>Bienvenido al Dashboard <c:out value="${nombre }"/></h1>
-	
 	<table class="table table-hover">
 		<thead>
 			<tr>
-				<th>Nombre</th>
-				<th>Apellido</th>
-				<th>Email</th>
-				<th>Acciones</th>
+				<th>Titulo</th>
+				<th>Descripcion</th>
+				<th>Idioma</th>
+				<th>Paginas</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="usuario" items="${usuarios}">
+			<c:forEach var="libro" items="${libros}">
 				<tr>
-				<td><c:out value="${usuario.getFirst_name()}"/></td>
-				<td><c:out value="${usuario.getLast_name()}"/></td>
-				<td><c:out value="${usuario.getEmail()}"/></td>
+				<td><c:out value="${libro.getTitle()}"/></td>
+				<td><c:out value="${libro.getDescription()}"/></td>
+				<td><c:out value="${libro.getLanguage()}"/></td>
+				<td><c:out value="${libro.getPages()}"/></td>
 				<td>
-					<form action="/delete/${usuario.getId()}" method="POST">
+					<form action="/delete/${libro.getId()}" method="POST">
 						<input type="hidden" name="_method" value="DELETE">
 						<button type="submit" class="btn btn-danger">Eliminar</button>
+			<!-- 		<button type="submit" class="btn btn-warning">Actualizar</button> -->	
 					</form>
-					<a href="/show/${usuario.getId()}" class="btn btn-warning">Ver</a>
 				</td>
 				</tr>
 			</c:forEach>	
 		</tbody>
 	</table>
-	<a href="/new" class="btn btn-primary">Agregar usuario</a>
-	<a href="/direcciones/new" class="btn btn-primary">Agregar direccion</a>
+	<a href="/new" class="btn btn-primary">Agregar libros</a>
 </body>
 </html>

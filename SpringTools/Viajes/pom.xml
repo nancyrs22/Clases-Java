@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>ProyectoUsuarios</artifactId>
+	<artifactId>Viajes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ProyectoUsuarios</name>
+	<name>Viajes</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -53,7 +53,6 @@
         	<groupId>org.springframework.boot</groupId>
         	<artifactId>spring-boot-starter-validation</artifactId>
     	</dependency>
-		
 		
 	</dependencies>
 

@@ -1,0 +1,10 @@
+1. Crear base de datos
+2. Crear proyecto en spring
+3. Agregar las dependencias en pom.xml
+4. Agregar las cosas a application properties
+5. Crear la carpeta webapp -> WEB-INF (src->main)
+6. Crear los paquetes (controladores, modelos, servicios, repositorios)
+7. Hacer el modelo
+8. Hacer el repositorio //se conecta con la base de datos
+9. Hacer el servicio //se conecta con el repositorio
+10. Hacer el controlador
