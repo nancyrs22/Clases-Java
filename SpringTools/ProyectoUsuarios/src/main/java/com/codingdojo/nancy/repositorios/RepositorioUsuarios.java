@@ -20,3 +20,4 @@ public interface RepositorioUsuarios extends CrudRepository<Usuario, Long>{
 	List<Usuario> findByEmailAndPassword(String email, String password);
 	List<Usuario> findByDireccionIdIsNull();
 }
+	

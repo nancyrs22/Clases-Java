@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.codingdojo.nancy.modelos.Salon;
 import com.codingdojo.nancy.modelos.Usuario;
 import com.codingdojo.nancy.servicios.ServicioUsuarios;
 
@@ -42,8 +43,11 @@ public class ControladorUsuariosPlantilla {
 	}
 	
 	@RequestMapping(value="/new", method=RequestMethod.GET)
-	public String register(@ModelAttribute("usuario") Usuario usuario) //Model Attribute: ayuda a crear una instacia de la clase usuario
+	public String register(@ModelAttribute("usuario") Usuario usuario, Model model) //Model Attribute: ayuda a crear una instacia de la clase usuario
 	{
+		List<Salon> lista_salones = servicio.get_Salones();
+		
+		model.addAttribute("salones",lista_salones);
 		
 		return "registro.jsp";
 	}

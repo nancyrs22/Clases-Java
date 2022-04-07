@@ -32,6 +32,7 @@
 						<button type="submit" class="btn btn-danger">Eliminar</button>
 			<!-- 		<button type="submit" class="btn btn-warning">Actualizar</button> -->	
 					</form>
+					<a href="/show/${libro.getId()}" class="btn btn-warning">Ver</a>	
 				</td>
 				</tr>
 			</c:forEach>	
