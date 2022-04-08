@@ -22,7 +22,7 @@
 		<tbody>
 			<c:forEach var="libro" items="${libros}">
 				<tr>
-				<td><c:out value="${libro.getTitle()}"/></td>
+				<td><a href="/show/${libro.getId()}"><c:out value="${libro.getTitle()}"/></a></td>
 				<td><c:out value="${libro.getDescription()}"/></td>
 				<td><c:out value="${libro.getLanguage()}"/></td>
 				<td><c:out value="${libro.getPages()}"/></td>
@@ -32,7 +32,7 @@
 						<button type="submit" class="btn btn-danger">Eliminar</button>
 			<!-- 		<button type="submit" class="btn btn-warning">Actualizar</button> -->	
 					</form>
-					<a href="/show/${libro.getId()}" class="btn btn-warning">Ver</a>	
+			<!-- 		<a href="/show/${libro.getId()}" class="btn btn-warning">Ver</a>	-->
 				</td>
 				</tr>
 			</c:forEach>	
