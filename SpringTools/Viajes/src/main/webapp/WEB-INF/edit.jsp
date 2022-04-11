@@ -41,7 +41,7 @@
 			<form:errors path="description"/>
 		</div>
 		
-		<input type="submit" values="Guardar" class="btn btn-success">
+		<input type="submit" value="Guardar" class="btn btn-success">
 		</form:form>
 	</div>
 </body>
