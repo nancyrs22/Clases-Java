@@ -31,7 +31,7 @@
 				<td><c:out value="${libro.getId()}"/></td>
 				<td><a href="/show/${libro.getId()}"><c:out value="${libro.getTitle()}"/></a></td>
 				<td><c:out value="${libro.getAuthor()}"/></td>
-				<td><c:out value="${libro.getPosted_by().getName()}"/></td>
+				<td><c:out value="${libro.getPostedBy()}"/></td>
 				</tr>
 			</c:forEach>	
 		</tbody>

@@ -1,14 +1,12 @@
 package com.codingdojo.nancy.modelos;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -43,9 +41,6 @@ public class User {
 	@NotEmpty(message="El campo de confirmacion es obligatorio")
 	@Size(min=6, max=128, message="La confirmacion de contraseña debe tener entre 6 y 128 caracteres")
 	private String confirm;
-	
-	@OneToMany(mappedBy="posted_by")
-	private List<Libro> libros;
 	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")

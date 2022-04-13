@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -33,9 +31,9 @@ public class Libro {
 	@Size(min=2, max=50, message="El titulo debe tener entre 2 y 50 caracteres")
 	private String author;
 	
-	@ManyToOne
-	@JoinColumn(name="user_id")
-	private User posted_by;
+	@NotEmpty(message = "El campo del posteador no debe estar vacio")
+	@Size(min=2, max=50, message="El titulo debe tener entre 2 y 50 caracteres")
+	private String postedBy;
 	
 	@NotEmpty(message = "El campo de pensamientos no debe estar vacio")
 	@Size(min=2, max=50, message="El titulo debe tener entre 2 y 50 caracteres")
@@ -76,12 +74,12 @@ public class Libro {
 		this.author = author;
 	}
 
-	public User getPosted_by() {
-		return posted_by;
+	public String getPostedBy() {
+		return postedBy;
 	}
 
-	public void setPosted_by(User posted_by) {
-		this.posted_by = posted_by;
+	public void setPostedBy(String postedBy) {
+		this.postedBy = postedBy;
 	}
 
 	public String getThoughts() {

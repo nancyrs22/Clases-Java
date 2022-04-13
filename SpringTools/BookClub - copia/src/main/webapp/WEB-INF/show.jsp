@@ -13,12 +13,10 @@
 <body>
 	<div class="container">
 		<h1><c:out value="${libro.title}" /> </h1>
-		<p><c:out value="${libro.posted_by.getName()}"/> read <c:out value="${libro.title}" /> by <c:out value="${libro.author}" /></p>
-		<p>Here are <c:out value="${libro.posted_by.getName()}"/>'s thoughts:</p>
+		<p><c:out value="${libro.postedBy}"/> read <c:out value="${libro.title}" /> by <c:out value="${libro.author}" /></p>
+		<p>Here are <c:out value="${libro.postedBy}"/>'s thoughts:</p>
 		<p><c:out value="${libro.thoughts}" /></p>
-		<c:if test="${libro.posted_by.id == user_session.id}">
-			<a href="/edit/${libro.getId()}" class="btn btn-warning">Editar</a>
-		</c:if>
+		<a href="/edit/${libro.getId() }" class="btn btn-warning">Editar</a>
 	</div>
 </body>
 </html>

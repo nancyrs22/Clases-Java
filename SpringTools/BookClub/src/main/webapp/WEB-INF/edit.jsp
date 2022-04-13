@@ -15,32 +15,29 @@
 		<h1>Editar Libro</h1>
 		
 		<form:form action="/edit/${libro.getId()}" method="post" modelAttribute="libro">
+			<form:hidden path="posted_by"/>
+			<form:input type="hidden" path="id" value="${libro.getId()}"/>
 			<input type="hidden" name="_method" value="put">
-			<form:input type="hidden" path="id" value="${libro.getId() }"/>
 			
-	<div class="form-group">
-		<form:label path="title">Titulo:</form:label>
-		<form:input path="title" class="form-control"/>
-		<form:errors path="title"/>
-	</div>
+			
+		<div class="form-group">
+			<form:label path="title">Titulo:</form:label>
+			<form:input path="title" class="form-control"/>
+			<form:errors path="title"/>
+		</div>
 	
-	<div class="form-group">
-		<form:label path="author">Autor:</form:label>
-		<form:input path="author" class="form-control"/>
-		<form:errors path="author"/>
-	</div>
+		<div class="form-group">
+			<form:label path="author">Autor:</form:label>
+			<form:input path="author" class="form-control"/>
+			<form:errors path="author"/>
+		</div>
 	
-	<div class="form-group">
-		<form:label path="thoughts">My thoughts:</form:label>
-		<form:input path="thoughts" class="form-control"/>
-		<form:errors path="thoughts"/>
-	</div>
+		<div class="form-group">
+			<form:label path="thoughts">My thoughts:</form:label>
+			<form:input path="thoughts" class="form-control"/>
+			<form:errors path="thoughts"/>
+		</div>
 	
-	<div class="form-group">
-		<form:label path="postedBy">Posted by:</form:label>
-		<form:input path="postedBy" class="form-control"/>
-		<form:errors path="postedBy"/>
-	</div>
 		
 		<input type="submit" value="Guardar" class="btn btn-success">
 		</form:form>

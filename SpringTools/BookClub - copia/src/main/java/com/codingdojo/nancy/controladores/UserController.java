@@ -92,5 +92,13 @@ public class UserController {
 	}
 */
 	
-
+	@RequestMapping(value="/dashboard",method=RequestMethod.GET)
+	public String dashboard(Model model)
+	{
+		List<Libro> libros = servicio.get_all();
+		
+		model.addAttribute("libros",libros);
+		
+		return "dashboard.jsp";
+	}
 }

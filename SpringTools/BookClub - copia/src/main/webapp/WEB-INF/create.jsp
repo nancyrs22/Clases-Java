@@ -13,7 +13,7 @@
 <body>
 	<h1>Nuevo Libro</h1>
 	<form:form action="/create" method="post" modelAttribute="libro">
-	<form:hidden value="${user_session.id}" path="posted_by"/>
+	
 	<div class="form-group">
 		<form:label path="title">Titulo:</form:label>
 		<form:input path="title" class="form-control"/>
@@ -31,7 +31,12 @@
 		<form:input path="thoughts" class="form-control"/>
 		<form:errors path="thoughts"/>
 	</div>
-
+	
+	<div class="form-group">
+		<form:label path="postedBy">My thoughts:</form:label>
+		<form:input path="postedBy" class="form-control"/>
+		<form:errors path="postedBy"/>
+	</div>
 	
 	<input type="submit" value="Enviar" class="btn btn-success">
 	</form:form>

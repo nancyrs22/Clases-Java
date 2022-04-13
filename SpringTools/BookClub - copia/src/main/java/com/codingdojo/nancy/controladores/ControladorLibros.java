@@ -1,7 +1,5 @@
 package com.codingdojo.nancy.controladores;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,22 +27,19 @@ public class ControladorLibros {
 	{
 		this.servicio = servicio;
 	}
-	
+/*	
 	@RequestMapping(value="/dashboard",method=RequestMethod.GET)
 	public String dashboard(Model model)
 	{
 		List<Libro> libros = servicio.get_all();
-		
 		model.addAttribute("libros",libros);
-		
 		return "dashboard.jsp";
 	}
-
+*/	
 	@GetMapping("/show/{id_url}")
 	public String show(@PathVariable("id_url")Long id, Model model)
 	{
 		Libro libro_show = servicio.find_libro(id);
-		
 		model.addAttribute("libro",libro_show);
 		return "show.jsp";
 	}
