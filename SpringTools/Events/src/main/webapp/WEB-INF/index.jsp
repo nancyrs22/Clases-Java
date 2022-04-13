@@ -2,7 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,15 +18,38 @@
 			<form:form action="/register" method="post" modelAttribute="nuevoUsuario">
 				
 				<div>
-					<form:label path="name">Nombre:</form:label> <!-- los campos deben corresponder a los nobmre de los atributos -->
-					<form:input path="name" class="form-control"/>
-					<form:errors path="name" class="text-danger"/>
+					<form:label path="first_name">Nombre:</form:label> <!-- los campos deben corresponder a los nobmre de los atributos -->
+					<form:input path="first_name" class="form-control"/>
+					<form:errors path="first_name" class="text-danger"/>
+				</div>
+				
+				<div>
+					<form:label path="last_name">Apellido:</form:label> <!-- los campos deben corresponder a los nobmre de los atributos -->
+					<form:input path="last_name" class="form-control"/>
+					<form:errors path="last_name" class="text-danger"/>
 				</div>
 				
 				<div>
 					<form:label path="email">Email:</form:label>
 					<form:input path="email" type="email" class="form-control"/>
 					<form:errors path="email" class="text-danger"/>
+				</div>
+				
+				<div>
+					<form:label path="location">Locacion:</form:label> <!-- los campos deben corresponder a los nobmre de los atributos -->
+					<form:input path="location" class="form-control"/>
+					<form:errors path="location" class="text-danger"/>
+				</div>
+				
+				<!-- Aqui va a ir el selector de estados -->
+				<div>
+					<form:label path="state">Estados:</form:label> <!-- los campos deben corresponder a los nobmre de los atributos -->
+					<form:select path="state" class="form-control">
+					<c:forEach var ="state" items="${states}">
+						<option value="${state}">${state}</option>
+					</c:forEach>
+					</form:select>
+					<form:errors path="state" class="text-danger"/>
 				</div>
 				
 				<div>
@@ -41,6 +63,8 @@
 					<form:password path="confirm" class="form-control"/>
 					<form:errors path="confirm" class="text-danger"/>
 				</div>
+				
+				
 				<input type="submit" value="Registrarme" class="btn btn-primary">
 				
 			</form:form>

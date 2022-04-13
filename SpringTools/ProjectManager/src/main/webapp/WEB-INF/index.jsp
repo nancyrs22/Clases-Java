@@ -19,9 +19,15 @@
 			<form:form action="/register" method="post" modelAttribute="nuevoUsuario">
 				
 				<div>
-					<form:label path="name">Nombre:</form:label> <!-- los campos deben corresponder a los nobmre de los atributos -->
-					<form:input path="name" class="form-control"/>
-					<form:errors path="name" class="text-danger"/>
+					<form:label path="first_name">Nombre:</form:label> <!-- los campos deben corresponder a los nobmre de los atributos -->
+					<form:input path="first_name" class="form-control"/>
+					<form:errors path="first_name" class="text-danger"/>
+				</div>
+				
+				<div>
+					<form:label path="last_name">Apellido:</form:label> <!-- los campos deben corresponder a los nobmre de los atributos -->
+					<form:input path="last_name" class="form-control"/>
+					<form:errors path="last_name" class="text-danger"/>
 				</div>
 				
 				<div>
